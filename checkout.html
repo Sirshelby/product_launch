@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout – Product X</title>
+    <link rel="stylesheet" href="product_launch.css">
+    <script src="checkout.js" defer></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container header-inner">
+            <h1 class="page-title">Checkout</h1>
+
+            <div class="search-wrapper">
+                <button type="button" class="icon-button" id="back-to-cart">
+                    Back to cart
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <section class="product-section">
+            <h2 class="section-title">Order summary</h2>
+
+            <p id="checkout-empty" class="review-body">
+                Your cart is empty. Please add items before checking out.
+            </p>
+
+            <table id="checkout-table" class="spec-table" style="display: none;">
+                <thead>
+                    <tr>
+                        <th scope="col">Product</th>
+                        <th scope="col">Options</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody id="checkout-items-body">
+                </tbody>
+            </table>
+
+            <p id="checkout-total" class="review-body" style="margin-top: 1rem; font-weight: 600;"></p>
+        </section>
+
+        <section class="product-section">
+            <h2 class="section-title">Your details</h2>
+
+            <form id="checkout-form" class="config-block">
+                <div>
+                    <label class="field-label" for="customer-name">Full name</label>
+                    <input id="customer-name" class="input-style" type="text" required>
+                </div>
+
+                <div>
+                    <label class="field-label" for="customer-email">Email address</label>
+                    <input id="customer-email" class="input-style" type="email" required>
+                </div>
+
+                <div>
+                    <label class="field-label" for="customer-address">Address</label>
+                    <input id="customer-address" class="input-style" type="text" required>
+                </div>
+
+                <div>
+                    <label class="field-label" for="customer-city">City</label>
+                    <input id="customer-city" class="input-style" type="text" required>
+                </div>
+
+                <div>
+                    <label class="field-label" for="customer-postcode">Postcode</label>
+                    <input id="customer-postcode" class="input-style" type="text" required>
+                </div>
+
+                <div>
+                    <label class="field-label" for="customer-card">Card number (test)</label>
+                    <input id="customer-card" class="input-style" type="text" inputmode="numeric" required>
+                </div>
+
+                <button type="submit" class="primary-button">
+                    Place order
+                </button>
+
+                <div id="checkout-status" class="status-message" aria-live="polite">
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-inner">
+            <p class="footer-text">&copy; 2025 Product Tech. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart – Product X</title>
+    <link rel="stylesheet" href="product_launch.css">
+    <script src="cart.js" defer></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container header-inner">
+            <h1 class="page-title">Your Cart</h1>
+
+            <div class="search-wrapper">
+                <button type="button" class="icon-button" id="back-to-product">
+                    Back to product
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <section class="product-section">
+            <h2 class="section-title">Cart items</h2>
+
+            <p id="cart-empty" class="review-body">
+                Your cart is currently empty.
+            </p>
+
+            <table id="cart-table" class="spec-table" style="display: none;">
+                <thead>
+                    <tr>
+                        <th scope="col">Product</th>
+                        <th scope="col">Options</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-items-body">
+                </tbody>
+            </table>
+
+            <p id="cart-total" class="review-body" style="margin-top: 1rem; font-weight: 600;"></p>
+
+            <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                <button type="button" id="clear-cart" class="primary-button" style="background-color: #6b7280;">
+                    Clear cart
+                </button>
+
+                <a href="checkout.html" id="checkout-link" class="primary-button" style="text-decoration: none; text-align: center;">
+                    Go to checkout
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-inner">
+            <p class="footer-text">&copy; 2025 Product Tech. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
