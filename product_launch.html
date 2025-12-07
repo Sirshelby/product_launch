@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product X – Product Launch</title>
+    <link rel="stylesheet" href="product_launch.css">
+    <script src="product_launch.js" defer></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container header-inner">
+            <h1 class="page-title">Product X</h1>
+
+            <div class="search-wrapper">
+                <div>
+                    <label for="site-search" class="sr-only">Search products</label>
+                    <input id="site-search" type="search" class="search-input" placeholder="Search products..." title="Search products">
+                </div>
+
+                <button type="button" class="icon-button" aria-label="View cart">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         width="24" height="24"
+                         viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="2"
+                         stroke-linecap="round"
+                         stroke-linejoin="round"
+                         aria-hidden="true">
+                        <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17" />
+                        <circle cx="17" cy="19" r="2" />
+                        <circle cx="9" cy="19" r="2" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <section id="product-spotlight" class="product-section" aria-labelledby="product-spotlight-heading">
+            <div class="product-layout">
+                <div>
+                    <figure>
+                        <img id="product-image" class="product-image" src="https://placehold.co/400x400/1e3a8a/f0f0f0?text=Product+BLUE" alt="Product X Ultra smartwatch in blue">
+                        <figcaption class="product-caption">
+                            Product X Ultra in your selected colour.
+                        </figcaption>
+                    </figure>
+
+                    <div class="color-choice-group" aria-label="Choose colour for Product X">
+                        <span class="color-label">
+                            Colour: <span id="current-color">Blue</span>
+                        </span>
+
+                        <button type="button" class="color-swatch color-swatch-black" aria-label="Select black colour" data-color="Black">
+                        </button>
+
+                        <button type="button" class="color-swatch color-swatch-white" aria-label="Select white colour" data-color="White">
+                        </button>
+
+                        <button type="button" class="color-swatch color-swatch-red" aria-label="Select red colour" data-color="Red">
+                        </button>
+                    </div>
+                </div>
+
+                <div class="config-block">
+                    <p class="sale-indicator" title="Current discount">Sale! 40% OFF Today.</p>
+
+                    <p class="price-text">$299.00</p>
+
+                    <div>
+                        <p id="product-spotlight-heading">
+                            Experience the future on your wrist with the Product X Ultra. Featuring an all-day battery and advanced health monitoring.
+                        </p>
+                    </div>
+
+                    <div class="sr-only">
+                        <label for="config-id">Configuration identifier</label>
+                        <input type="hidden" id="config-id" value="ZXU221">
+                    </div>
+
+                    <div>
+                        <label class="field-label" for="size-select">Choose case size</label>
+                        <select id="size-select" class="input-style">
+                            <option value="">-- Select size --</option>
+                            <option value="42mm">42mm (Standard)</option>
+                            <option value="46mm">46mm (Large)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="field-label" for="quantity">Quantity (required)</label>
+                        <input type="number" id="quantity" class="input-style" placeholder="Quantity" min="1" value="1">
+                    </div>
+
+                    <fieldset>
+                        <legend>Strap material</legend>
+                        <div class="radio-row">
+                            <div>
+                                <input type="radio" name="strap" id="strap-silicone" value="silicone">
+                                <label for="strap-silicone">Silicone Sport</label>
+                            </div>
+
+                            <div>
+                                <input type="radio" name="strap" id="strap-leather" value="leather">
+                                <label for="strap-leather">Leather Classic</label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <button id="buy-now-btn" class="primary-button" type="button" accesskey="b">
+                        Add to Cart
+                    </button>
+
+                    <div id="cart-status" class="status-message" aria-live="polite">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="product-section">
+            <h2 class="section-title">Core Features</h2>
+
+            <div class="features-grid">
+                <article class="feature-card">
+                    <h3 class="review-header">1. Always-On Display</h3>
+                    <p class="review-body">
+                        Check your metrics at a glance, day or night.
+                    </p>
+                </article>
+
+                <article class="feature-card">
+                    <img src="https://placehold.co/50x50/f97316/ffffff?text=H" alt="" role="presentation" class="feature-icon">
+                    <h3 class="review-header">2. Ultra Health Monitoring</h3>
+                    <p class="review-body">
+                        ECG, sleep tracking, and blood oxygen monitoring.
+                    </p>
+                </article>
+
+                <article class="feature-card">
+                    <h3 class="review-header">3. Waterproof Design</h3>
+                    <p class="review-body">
+                        Rated IP68 for swimming and harsh conditions.
+                    </p>
+                </article>
+            </div>
+
+            <p class="justified-text review-body extra-copy">
+                The Product X Smartwatch represents a major leap in wearable technology. We've redesigned the chip architecture for 50% better performance while maintaining its slim profile. This focus on efficiency ensures that your device keeps pace with your demanding
+                schedule, offering reliability when you need it most.
+            </p>
+        </section>
+
+        <section id="reviews" class="product-section">
+            <h2 class="section-title">What People Are Saying</h2>
+
+            <div class="review-divider">
+                <h3 class="review-header">"Best Smartwatch on the market."</h3>
+                <p class="review-body">
+                    I found the battery life to be incredibly
+                    <strong class="highlight">long-lasting</strong> and the OS very <em>intuitive</em>.
+                </p>
+                <div class="review-author-row">
+                    <img src="https://placehold.co/50x50/d1d5db/374151?text=A" alt="Portrait of reviewer Alex M." class="review-author-img">
+                    <p class="review-body review-author-name">Alex M.</p>
+                </div>
+            </div>
+
+            <div class="review-divider">
+                <h3 class="review-header">"A solid upgrade."</h3>
+                <p class="review-body">
+                    Worth the money if you're looking for advanced fitness tracking capabilities.
+                </p>
+            </div>
+
+            <button id="next-product-button" type="button" class="link-button">
+                View all 4,500 reviews &gt;
+            </button>
+        </section>
+
+        <section id="tech-specs" class="product-section">
+            <h2 class="section-title">Technical Specifications</h2>
+
+            <table class="spec-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Feature</th>
+                        <th scope="col">Detail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Storage</td>
+                        <td>32 GB</td>
+                    </tr>
+                    <tr>
+                        <td>Battery</td>
+                        <td>Up to 7 days</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="promo" class="product-section">
+            <h2 class="section-title">Product Unboxing</h2>
+
+            <img src="https://placehold.co/400x100/1e3a8a/60a5fa?text=Limited+Time+Offer+-+Free+Shipping" alt="Limited time offer – free shipping on Product X" class="promo-banner">
+
+            <p class="review-body promo-text">
+                Watch a full product demonstration:
+            </p>
+
+            <iframe width="100%" height="250" src="https://www.youtube.com/embed/S_T10uPq65g" frameborder="0" allowfullscreen title="Product X Ultra smartwatch unboxing and demonstration video">
+            </iframe>
+        </section>
+
+        <div class="helper-row">
+            <button type="button" class="badge-button" aria-label="Notification preferences">
+                <span class="badge-icon">&#128276;</span>
+            </button>
+
+            <a href="#site-search" class="back-to-search-link">
+                <span class="sr-only">Back to product search</span>
+            </a>
+
+            <p class="helper-text">
+                &#128717; Free 30-day returns.
+            </p>
+        </div>
+
+        <div class="help-block">
+            <p class="help-heading">Need help?</p>
+
+            <a href="mailto:support@example.com" class="help-link">
+                Email customer support
+            </a>
+
+            <a href="#promo" class="help-link help-link-secondary">
+                Find a store
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-inner">
+            <p class="footer-text">&copy; 2025 Product Tech. All rights reserved.</p>
+
+            <p class="footer-text footer-small">
+                Review our full policy.
+                <a href="/warranty" target="_blank" class="footer-policy-link">
+                    More details
+                </a>.
+            </p>
+
+            <div class="footer-terms">
+                <label class="footer-terms-label">
+                    <input
+                        type="checkbox"
+                        name="terms-agree"
+                        class="footer-terms-checkbox">
+                    <span>I agree to the Terms of Service.</span>
+                </label>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
