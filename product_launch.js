@@ -2,20 +2,26 @@ function addToCart() {
     var sizeSelect = document.getElementById("size-select");
     var quantityInput = document.getElementById("quantity");
     var strapInputs = document.querySelectorAll("input[name='strap']");
-    var currentColor = document.getElementById("current-color");
+    var colourLabel = document.getElementById("current-color");
     var status = document.getElementById("cart-status");
 
-    var size = sizeSelect ? sizeSelect.value : "";
-    var quantity = quantityInput ? quantityInput.value : "";
+    if (!sizeSelect || !quantityInput || !status) {
+        return;
+    }
+
+    var size = sizeSelect.value;
+    var quantity = quantityInput.value;
     var strap = "";
-    strapInputs.forEach(function(input) {
-        if (input.checked) {
-            strap = input.value;
+    var i;
+
+    for (i = 0; i < strapInputs.length; i++) {
+        if (strapInputs[i].checked) {
+            strap = strapInputs[i].value;
         }
-    });
+    }
 
     if (!size || !quantity || !strap) {
-        status.textContent = "Please choose a size, quantity and strap material before adding to cart.";
+        status.textContent = "Fill in all options before adding to cart.";
         status.style.display = "block";
         status.style.backgroundColor = "#fee2e2";
         status.style.color = "#b91c1c";
@@ -24,17 +30,20 @@ function addToCart() {
     }
 
     var item = {
-        id: "product-x-ultra",
         name: "Product X Ultra",
         size: size,
         quantity: parseInt(quantity, 10),
         strap: strap,
-        colour: currentColor ? currentColor.textContent : "",
+        colour: colourLabel ? colourLabel.textContent : "",
         price: 299
     };
 
+    var items = [];
     var existing = localStorage.getItem("cartItems");
-    var items = existing ? JSON.parse(existing) : [];
+
+    if (existing) {
+        items = JSON.parse(existing);
+    }
 
     items.push(item);
     localStorage.setItem("cartItems", JSON.stringify(items));
@@ -61,20 +70,21 @@ function changeColor(colorName) {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    var addToCartButton = document.getElementById("buy-now-btn");
-    if (addToCartButton) {
-        addToCartButton.addEventListener("click", addToCart);
+    var button = document.getElementById("buy-now-btn");
+    if (button) {
+        button.onclick = addToCart;
     }
 
     var swatches = document.querySelectorAll(".color-swatch");
-    swatches.forEach(function(swatch) {
-        swatch.addEventListener("click", function() {
-            var colorName = swatch.getAttribute("data-color");
+    var i;
+    for (i = 0; i < swatches.length; i++) {
+        swatches[i].addEventListener("click", function() {
+            var colorName = this.getAttribute("data-color");
             if (colorName) {
                 changeColor(colorName);
             }
         });
-    });
+    }
 
     var cartButton = document.getElementById("cart-button");
     if (cartButton) {

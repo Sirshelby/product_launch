@@ -39,8 +39,10 @@ function renderCheckout() {
     }
 
     var total = 0;
+    var i;
 
-    items.forEach(function(item) {
+    for (i = 0; i < items.length; i++) {
+        var item = items[i];
         var quantity = item.quantity || 0;
         var price = item.price || 0;
         var subtotal = quantity * price;
@@ -75,7 +77,7 @@ function renderCheckout() {
         tr.appendChild(subtotalCell);
 
         tbody.appendChild(tr);
-    });
+    }
 
     totalElement.textContent = "Order total: " + formatMoney(total);
 }

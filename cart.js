@@ -12,7 +12,7 @@ function renderCart() {
     var totalElement = document.getElementById("cart-total");
     var checkoutLink = document.getElementById("checkout-link");
 
-    if (!tbody || !emptyMessage || !table || !totalElement || !checkoutLink) {
+    if (!emptyMessage || !table || !tbody || !totalElement || !checkoutLink) {
         return;
     }
 
@@ -33,8 +33,10 @@ function renderCart() {
     checkoutLink.style.opacity = "1";
 
     var total = 0;
+    var i;
 
-    items.forEach(function(item) {
+    for (i = 0; i < items.length; i++) {
+        var item = items[i];
         var quantity = item.quantity || 0;
         var price = item.price || 0;
         var subtotal = quantity * price;
@@ -73,7 +75,7 @@ function renderCart() {
         tr.appendChild(subtotalCell);
 
         tbody.appendChild(tr);
-    });
+    }
 
     totalElement.textContent = "Cart total: " + formatMoney(total);
 }
